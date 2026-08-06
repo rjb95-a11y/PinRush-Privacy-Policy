@@ -87,14 +87,17 @@
     <p>You steer left and right.</p>
     <p>You can watch interstitial ads after some runs.</p>
     <p>You can buy a one-time Remove Ads purchase.</p>
+    <p>Pin Rush includes an optional All-Time top 10 distance Hall of Fame.</p>
     <p>You do not need an account to play.</p>
 
     <h2>4. Summary of data practices</h2>
     <ul>
       <li>The app keeps gameplay and settings data on your device.</li>
+      <li>After each online run, the app may send a random player ID and your run distance to check Hall of Fame qualification.</li>
+      <li>Only top-10 Hall of Fame entries are stored online and shown publicly (display name and distance).</li>
+      <li>Do not use your real name on the public board if you do not want it shown to others.</li>
       <li>Google AdMob may collect and share ad-related data to show ads.</li>
       <li>Google Play Billing handles Remove Ads purchases.</li>
-      <li>An online Hall of Fame may collect a short display name later. That feature is not active yet.</li>
       <li>We do not run a separate first-party analytics or crash service in the current app build.</li>
     </ul>
 
@@ -108,8 +111,12 @@
       <li>a first-run tip flag</li>
       <li>Remove Ads ownership state</li>
       <li>ad timing counters used only on the device</li>
+      <li>a random player ID for the Hall of Fame</li>
+      <li>your saved Hall of Fame display name, if you entered one</li>
     </ul>
-    <p>We do not upload this local gameplay data for core play today.</p>
+    <p>Most settings and your local best stay on the device only.</p>
+    <p>When you are online and the Hall of Fame is enabled, the app may send your player ID and run distance after each run to check qualification.</p>
+    <p>The app sends your display name only when you provide it (for example when a run qualifies).</p>
     <p>Uninstall of the app, or clear of app storage, removes this local data.</p>
 
     <h2>6. Advertising (Google AdMob)</h2>
@@ -134,22 +141,27 @@
     <p>We do not receive your full payment card numbers.</p>
     <p>We receive purchase or entitlement state so the app can remove ads and restore the purchase.</p>
 
-    <h2>8. Online Hall of Fame (when enabled)</h2>
-    <p>A future update may add an All-Time top 10 distance Hall of Fame.</p>
-    <p>When that feature is enabled:</p>
+    <h2>8. Online Hall of Fame</h2>
+    <p>Pin Rush includes a live All-Time top 10 distance Hall of Fame.</p>
+    <p>How it works:</p>
     <ul>
-      <li>you may choose a short display name if your run qualifies</li>
-      <li>the service may store that name and distance</li>
-      <li>the board may show rank, name, and distance</li>
-      <li>you still do not need an account to play</li>
-      <li>offline play still works</li>
+      <li>Only the current top 10 distances are stored online.</li>
+      <li>You do not need an account to play or view the board.</li>
+      <li>Offline play still works. The board and submit need Internet.</li>
+      <li>After each online run, the app sends your random player ID and run distance to check qualification.</li>
+      <li>If your run qualifies, you may enter a short display name (3–12 characters).</li>
+      <li>The public board shows rank, display name, and distance only.</li>
+      <li>Your player ID is not shown on the public board.</li>
+      <li>Display names on the board are <strong>public</strong>. Anyone who opens the board can see them. Do not use your real name if you do not want it shown.</li>
+      <li>Your display name is set when you first enter the board. Later runs can improve your distance on the board, but they do not change your display name on the server.</li>
+      <li>Submit traffic may use your IP address for abuse prevention and rate limits. That data is not shown on the public board.</li>
     </ul>
-    <p>This online board is not active in the current ship.</p>
+    <p>Cloudflare (Workers and D1 database) hosts this service for us.</p>
 
     <h2>9. Permissions</h2>
     <p>Pin Rush is designed to use:</p>
     <ul>
-      <li>Internet access for ads and purchases</li>
+      <li>Internet access for ads, purchases, and the Hall of Fame</li>
       <li>Vibration for optional haptic feedback</li>
     </ul>
     <p>Pin Rush does not ask for contacts, camera, microphone, or precise location for its own game features.</p>
@@ -160,7 +172,8 @@
       <li>run the game and remember settings and best score</li>
       <li>show ads unless you own Remove Ads</li>
       <li>process and restore the Remove Ads purchase</li>
-      <li>operate the Hall of Fame when that feature is enabled</li>
+      <li>operate the Hall of Fame (check qualification, show the board, store top-10 entries)</li>
+      <li>prevent abuse and apply rate limits on Hall of Fame submits</li>
       <li>respond to your contact requests</li>
       <li>meet legal duties when required</li>
     </ul>
@@ -170,7 +183,8 @@
     <ul>
       <li>with Google for AdMob ads</li>
       <li>with Google for Play Billing purchases</li>
-      <li>with a Hall of Fame host when that feature is enabled</li>
+      <li>with Cloudflare to operate the Hall of Fame (player ID, distance, and display name when provided)</li>
+      <li>on the <strong>public</strong> Hall of Fame board (display name and distance for top-10 entries only)</li>
       <li>with authorities when law requires it</li>
     </ul>
     <p>We use service providers only as needed to run the service.</p>
@@ -178,20 +192,21 @@
 
     <h2>12. Sale of data and ad-related sharing</h2>
     <p>We do not sell personal data for money.</p>
+    <p>Showing your Hall of Fame display name and distance on the public top-10 board is not a sale of data.</p>
     <p>Advertising may involve sharing of identifiers and related data with Google for ads.</p>
     <p>In some U.S. states, that ad activity can count as a “share” or targeted advertising under local law.</p>
     <p>You can use device ad settings and Google ad settings to limit personalized ads where those controls exist.</p>
 
     <h2>13. International transfers</h2>
     <p>Google may process ad and purchase data outside your country.</p>
-    <p>Any future Hall of Fame host may also process data outside your country.</p>
+    <p>Cloudflare may process Hall of Fame data outside your country.</p>
     <p>Their terms and privacy policies apply to their services.</p>
 
     <h2>14. Retention</h2>
     <ul>
       <li>Local app data stays on the device until you clear storage or uninstall.</li>
       <li>Ad-related data follows Google’s retention practices.</li>
-      <li>Hall of Fame entries, when enabled, stay while listed or until we remove them after a valid request.</li>
+      <li>Hall of Fame top-10 entries stay while listed or until we remove them after a valid request.</li>
     </ul>
 
     <h2>15. Security</h2>
@@ -205,7 +220,7 @@
     <p>It is not enrolled as a Kids Category or Designed for Families product.</p>
     <p>A parental gate appears before Remove Ads purchase or restore as purchase hygiene.</p>
     <p>Parents or guardians may contact us at <a href="mailto:pinrush12@gmail.com">pinrush12@gmail.com</a> about a child’s data.</p>
-    <p>If an online Hall of Fame name exists later, you may ask us to remove it.</p>
+    <p>You may ask us to remove a child’s Hall of Fame display name from the public board.</p>
 
     <h2>17. Rights and choices</h2>
     <p>Depending on your country or state, you may have rights to:</p>
@@ -220,22 +235,25 @@
       <li>buy Remove Ads to stop interstitial ads from Pin Rush</li>
       <li>use Google ad settings and Android advertising ID controls</li>
       <li>uninstall the app to remove local app data</li>
+      <li>choose not to enter a Hall of Fame display name (you can still play)</li>
     </ul>
+    <p>Hall of Fame display names on the board are not changed by later runs. To change or remove a board entry, email us.</p>
     <p>To make a request, email <a href="mailto:pinrush12@gmail.com">pinrush12@gmail.com</a>.</p>
     <p>Include the app name and a clear description of your request.</p>
+    <p>For Hall of Fame requests, include your display name and approximate distance. Include your player ID if you know it.</p>
     <p>We may need enough detail to find any online record.</p>
 
     <h2>18. No account / how to delete data</h2>
     <p>Pin Rush does not require an account.</p>
     <p>To delete local data: uninstall the app, or clear the app’s storage in Android settings.</p>
-    <p>To request deletion of an online Hall of Fame entry when that feature exists: email <a href="mailto:pinrush12@gmail.com">pinrush12@gmail.com</a> with your display name and approximate score if you know them.</p>
+    <p>To request removal of a Hall of Fame board entry: email <a href="mailto:pinrush12@gmail.com">pinrush12@gmail.com</a> with your display name, approximate distance, and player ID if you know it. There is no in-app delete button for the online board.</p>
     <p>Google controls deletion for data that only Google holds for ads or payments. Use Google’s tools and policies for those requests when needed.</p>
 
     <h2>19. Legal bases (EEA, UK, and similar)</h2>
     <p>Where GDPR or UK GDPR applies, we rely on these bases as applicable:</p>
     <ul>
       <li><strong>Contract / service:</strong> to provide the game and process purchases you request</li>
-      <li><strong>Legitimate interests:</strong> to operate and secure the app in ways you can expect, where that basis applies</li>
+      <li><strong>Legitimate interests:</strong> to operate and secure the app and the optional Hall of Fame in ways you can expect, where that basis applies</li>
       <li><strong>Consent:</strong> for certain advertising or identifier uses where consent is required</li>
     </ul>
     <p>Consent, where required, may come through Google tools, system settings, or regional messaging.</p>
@@ -245,9 +263,11 @@
     <ul>
       <li>Google AdMob for interstitial ads</li>
       <li>Google Play Billing for Remove Ads</li>
+      <li>Cloudflare (Workers and D1) for the Hall of Fame</li>
     </ul>
-    <p>We do not control Google’s independent processing.</p>
-    <p>Read Google’s policies for those services.</p>
+    <p>We do not control Google’s or Cloudflare’s independent processing.</p>
+    <p>Read Google’s policies: <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></p>
+    <p>Read Cloudflare’s policy: <a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></p>
 
     <h2>21. Changes</h2>
     <p>We may update this policy.</p>
